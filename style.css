@@ -18,7 +18,7 @@ body {
 }
 
 .hero-header {
-  height: 70vh;
+  height: 40vh;
   background: url("../img/gameprint.png") center/cover no-repeat;
   display: flex;
   justify-content: center;
@@ -63,7 +63,7 @@ body {
 
 section {
   background: white;
-  padding: 1.5rem;
+  padding: 1.85rem;
   border: 2px solid black;
   text-align: left;
 }
