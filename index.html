@@ -4,83 +4,106 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Casa dos Pombos</title>
-  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="hero-header">
-  <div class="overlay">
-    <h1>Casa dos Pombos</h1>
-    <p>A busca por uma casa o levou longe demais...</p>
-    <a href="#" class="cta">Baixar jogo</a>
+<nav class="nav">
+  <div class="nav-logo">🕊 CASA DOS POMBOS</div>
+  <div class="nav-links">
+    <a href="#sobre">Sobre</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#controles">Controles</a>
+    <a href="#equipe">Equipe</a>
+    <a href="#log">Dev Log</a>
+    <a href="#instalar">Instalar</a>
+    <a href="#gameplay">Gameplay</a>
   </div>
-</header>
+</nav>
+
+<div class="hero">
+  <div class="hero-conteudo">
+    <img src="img/titulo.png" alt="Casa dos Pombos" class="hero-img-title">
+    <p class="hero-sub">A busca por uma casa o levou longe demais...</p>
+    <a href="#" class="btn-cta">▼ BAIXAR JOGO</a>
+  </div>
+</div>
 
 <main class="container">
 
-  <section>
-    <h2>Sobre o jogo</h2>
-    <p>Sem teto e sem esperança, um portal misterioso abriu diante dele. Do outro lado? Uma dimensão tomada por adolescentes que odeiam pombos.</p>
+  <section id="sobre">
+    <h2>🕊 Sobre o jogo</h2>
+    <p>Sem teto e sem esperança, um portal misterioso abriu diante dele.<br><br>Do outro lado? Uma dimensão tomada por adolescentes que odeiam pombos.</p>
   </section>
 
-  <section class="gallery">
-    <h2>Imagens do jogo</h2>
-    <div class="grid">
-      <img src="img/imagenstemp/imgtemp1.jpg">
-      <img src="img/imagenstemp/imgtemp2.jpg">
-      <img src="img/imagenstemp/imgtemp3.jpg">
+  <section id="galeria">
+    <h2>🖼 Imagens do jogo</h2>
+    <div class="gallery-grid">
+      <div class="gal-item"><img src="img/telainicial.png" alt="Tela inicial"></div>
+      <div class="gal-item"><img src="img/gameplay.png" alt="Gameplay"></div>
+      <div class="gal-item"><img src="img/fundodetelafimpombo.png" alt="Tela final"></div>
+    </div>
   </section>
 
-  <section>
-    <h2>Como jogar</h2>
-    <p>Use as setas do teclado para se mover como o personagem e o WASD como o pombo.</p>
-    <p>Use o botão do mouse para atirar pedras como o personagem e o espaço para defecar como o pombo.</p>
+  <section id="controles">
+    <h2>🎮 Como jogar</h2>
+    <div class="controls-grid">
+      <div class="ctrl-card">
+        <div class="ctrl-title">🧑 Humano</div>
+        <div class="ctrl-row"><span class="key">← →</span><span class="ctrl-desc">Mover</span></div>
+        <div class="ctrl-row"><span class="key">MOUSE</span><span class="ctrl-desc">Atirar pedras</span></div>
+      </div>
+      <div class="ctrl-card">
+        <div class="ctrl-title">🕊 Pombo</div>
+        <div class="ctrl-row"><span class="key">WASD</span><span class="ctrl-desc">Mover</span></div>
+        <div class="ctrl-row"><span class="key">ESPAÇO</span><span class="ctrl-desc">Defecar</span></div>
+        <div class="ctrl-row"><span class="key">Q</span><span class="ctrl-desc">Defecar Explosivo</span></div>
+      </div>
+    </div>
   </section>
 
-  <section>
-  <h2>Equipe</h2>
-  <div class="equipe-container">
-    <img src="img/time.jpeg" alt="Foto da equipe">
-    <ol>
-      <li>Victor Barbosa Viana</li>
-      <li>Thiago Zanin Tozzi</li>
-    </ol>
-  </div>
-</section>
+  <section id="equipe">
+    <h2>👥 Equipe</h2>
+    <div class="team-wrap">
+      <div>
+        <div class="member"><div class="member-sprite">💻</div><div class="member-name">Victor Barbosa Viana</div></div>
+        <div class="member"><div class="member-sprite">💻</div><div class="member-name">Thiago Zanin Tozzi</div></div>
+      </div>
+      <div class="team-img"><img src="img/time.jpeg" alt="Equipe"></div>
+    </div>
+  </section>
 
-  <section>
-  <h2>Log de desenvolvimento</h2>
-  <ul>
-    <li>Dia 1 (18/04): Inserção de imagens iniciais</li>
-    <li>Dia 2 (19/04): Imagens com fundo transparente</li>
-    <li>Dia 3 (21/04): Base do jogo — movimentação do humano, mecânicas do pombo e fundo de tela</li>
-    <li>Dia 4 (22/04): HUD e mecânicas — barra de vida, cronômetro, colisões pedra/pombo, cocô, sons, mira no cursor e telas finais</li>
-    <li>Dia 5 (23/04): NPC na fase difícil e média, balanceamento e ajustes de tela</li>
-    <li>Dia 6 (25/04): Menu principal, intro de vídeo, coco explosivo e navegação entre telas</li>
-    <li>Dia 7 (27/04): Ajustes de resolução de tela e dimensões dos botões do menu</li>
-  </ul>
-</section>
+  <section id="log">
+    <h2>📋Log de Desenvolvimento</h2>
+    <div class="log-box">
+      <div class="log-row"><span class="log-day">Dia 1 · 18/04</span><span class="log-txt">Inserção de imagens iniciais</span></div>
+      <div class="log-row"><span class="log-day">Dia 2 · 19/04</span><span class="log-txt">Imagens com fundo transparente</span></div>
+      <div class="log-row"><span class="log-day">Dia 3 · 21/04</span><span class="log-txt">Base do jogo — movimentação do humano, mecânicas do pombo e fundo de tela</span></div>
+      <div class="log-row"><span class="log-day">Dia 4 · 22/04</span><span class="log-txt">HUD e mecânicas — barra de vida, cronômetro, colisões, sons, mira e telas finais</span></div>
+      <div class="log-row"><span class="log-day">Dia 5 · 23/04</span><span class="log-txt">NPC nas fases difícil e média, balanceamento e ajustes de tela</span></div>
+      <div class="log-row"><span class="log-day">Dia 6 · 25/04</span><span class="log-txt">Menu principal, intro de vídeo, coco explosivo e navegação entre telas</span></div>
+      <div class="log-row"><span class="log-day">Dia 7 · 27/04</span><span class="log-txt">Ajustes de resolução de tela e dimensões dos botões do menu</span></div>
+    </div>
+  </section>
 
-  <section>
-  <h2>Instruções para executar</h2>
-  <ol>
-    <li>Baixe o arquivo zip e extraia</li>
-    <li>Tenha Python instalado (<a href="https://www.python.org/downloads/" target="_blank">python.org/downloads</a>)</li>
-    <li>Instale as dependências pelo terminal:
-      <ul>
-        <li><code>pip install pygame</code></li>
-        <li><code>pip install opencv-python</code></li>
-        <li><code>pip install moviepy</code></li>
-      </ul>
-    </li>
-    <li>Execute o arquivo principal do jogo no terminal (python jogo.py)</li>
-  </ol>
-</section>
+  <section id="instalar">
+    <h2>⚙️ Instruções para executar</h2>
+    <div class="steps">
+      <div class="step"><div class="step-n">1</div><div class="step-t">Baixe o arquivo zip e extraia</div></div>
+      <div class="step"><div class="step-n">2</div><div class="step-t">Tenha Python instalado → <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads</a></div></div>
+      <div class="step"><div class="step-n">3</div><div class="step-t">
+        Instale as dependências:<br>
+        <code>pip install pygame</code><br>
+        <code>pip install opencv-python</code><br>
+        <code>pip install moviepy</code>
+      </div></div>
+      <div class="step"><div class="step-n">4</div><div class="step-t">Execute: <code>python jogo.py</code></div></div>
+    </div>
+  </section>
 
-  <section class="video">
-    <h2>Gameplay</h2>
+  <section id="gameplay">
+    <h2>▶ Gameplay</h2>
     <video controls>
       <source src="video/videotemp.mp4" type="video/mp4">
     </video>
@@ -89,7 +112,7 @@
 </main>
 
 <footer>
-  <p>Projeto acadêmico</p>
+  <p>© Projeto Casa dos Pombos de Victor Barbosa Viana e Thiago Zanin Tozzi</p>
 </footer>
 
 </body>
