@@ -85,7 +85,8 @@ section {
 /* Imagem do título em estilo pixel art */
 .hero-img-title {
   width: 600px;
-  image-rendering: pixelated; /* Mantém nitidez em imagens de baixa resolução */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 /* Texto descritivo abaixo do título */
