@@ -1,24 +1,29 @@
+/* Importação das fontes: Press Start 2P (pixel/título) e Fira Code (monospace/corpo) */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fira+Code:wght@400;500&display=swap');
 
+/* Reset global: remove margens, paddings e usa box-sizing consistente */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Variáveis de cor reutilizadas em todo o projeto */
 :root {
-  --dark: #1f2a38;
-  --accent: #ff4d4d;
-  --bg: #f0f8ff;
+  --dark: #1f2a38;      /* Azul escuro — fundo de nav, cards, badges */
+  --accent: #ff4d4d;    /* Vermelho — botões, numeração de passos */
+  --bg: #f0f8ff;        /* Azul clarinho — fundo geral e cards internos */
 }
 
+/* Estilo base do corpo da página */
 body {
   font-family: 'Fira Code', 'Courier New', monospace;
   background: var(--bg);
   color: #1a1a1a;
 }
 
+/* Garante que âncoras de navegação não fiquem escondidas atrás da nav fixa */
 section {
   scroll-margin-top: 80px;
 }
 
-/*NAVEGADOR*/
+/* ========== NAVEGAÇÃO ========== */
 
 .nav {
   background: var(--dark);
@@ -27,21 +32,27 @@ section {
   display: flex;
   align-items: center;
   gap: 2rem;
-  position: sticky;
+  position: sticky; /* Fica fixo no topo ao rolar a página */
   top: 0;
   z-index: 100;
   flex-wrap: wrap;
 }
+
+/* Logo da nav — usa fonte pixel */
 .nav-logo {
   color: #fff;
   font-family: 'Press Start 2P', monospace;
   font-size: 14px;
 }
+
+/* Container dos links de navegação */
 .nav-links {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
+
+/* Estilo dos links individuais */
 .nav-links a {
   color: #a8c8e8;
   text-decoration: none;
@@ -50,18 +61,19 @@ section {
 }
 .nav-links a:hover { color: #fff; }
 
-/*FUNDO*/
+/* ========== HERO (BANNER PRINCIPAL) ========== */
 
 .hero {
   background: url('img/fundodetelagame.png') center bottom/cover no-repeat;
   min-height: 380px;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-end;    /* Conteúdo ancorado na parte inferior */
   justify-content: center;
   text-align: center;
   padding-bottom: 3rem;
 }
 
+/* Empilha imagem, subtítulo e botão verticalmente */
 .hero-conteudo {
   display: flex;
   flex-direction: column;
@@ -70,13 +82,15 @@ section {
   margin-top: 1rem;
 }
 
+/* Imagem do título em estilo pixel art */
 .hero-img-title {
   width: 600px;
-  image-rendering: pixelated;
+  image-rendering: pixelated; /* Mantém nitidez em imagens de baixa resolução */
 }
 
+/* Texto descritivo abaixo do título */
 .hero-sub {
-  margin-top: -80px;
+  margin-top: -80px; /* Aproxima o texto da imagem do título */
   font-size: 13px;
   color: #1f2a38;
   text-shadow: 1px 1px #fff;
@@ -85,6 +99,7 @@ section {
   font-family: 'Press Start 2P', monospace;
 }
 
+/* Botão principal de download */
 .btn-cta {
   display: inline-block;
   background: var(--accent);
@@ -94,14 +109,16 @@ section {
   padding: 1.1rem 2.2rem;
   text-decoration: none;
   border: 3px solid #000;
-  box-shadow: 5px 5px 0 #000;
+  box-shadow: 5px 5px 0 #000; /* Sombra estilo pixel/retro */
   transition: transform .1s, box-shadow .1s;
 }
-.btn-cta:hover { transform: translate(3px, 3px); box-shadow: 2px 2px 0 #000; }
+/* Efeito de "pressionar" o botão ao passar o mouse */
+.btn-cta:hover  { transform: translate(3px, 3px); box-shadow: 2px 2px 0 #000; }
 .btn-cta:active { transform: translate(5px, 5px); box-shadow: none; }
 
-/*LAYOUT*/
+/* ========== LAYOUT PRINCIPAL ========== */
 
+/* Centraliza e limita a largura do conteúdo */
 .container {
   max-width: 960px;
   margin: 0 auto;
@@ -111,34 +128,51 @@ section {
   gap: 2.5rem;
 }
 
+/* Estilo base de cada seção */
 section {
   background: white;
   padding: 2rem;
   border: 2px solid black;
 }
 
+/*
+  ALTERAÇÃO — alinhamento de emoji com título:
+  Antes: apenas text-align: center (emoji e texto desalinhados verticalmente).
+  Depois: display flex + align-items center centraliza o emoji e o texto
+  no mesmo eixo vertical. justify-content mantém tudo centralizado
+  horizontalmente, substituindo o text-align anterior.
+  No HTML, emoji e texto foram separados em <span> para que o flex funcione.
+*/
 h2 {
   font-family: 'Press Start 2P', monospace;
   font-size: 16px;
   margin-bottom: 1.5rem;
-  text-align: center;
   color: var(--dark);
+
+  /* Alinhamento emoji + texto */
+  display: flex;
+  align-items: center;     /* Centraliza verticalmente emoji e texto */
+  justify-content: center; /* Mantém o conjunto centralizado na seção */
+  gap: 0.5em;              /* Espaço entre o emoji e o texto */
 }
 
+/* Parágrafos de corpo de texto */
 p {
   font-size: 16px;
   line-height: 2;
   color: #333;
 }
 
-/*GALLERIA*/
+/* ========== GALERIA ========== */
 
+/* Grade de 3 colunas iguais para os screenshots */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
+/* Imagem da galeria com altura fixa e corte por object-fit */
 .gal-item img {
   width: 100%;
   height: 220px;
@@ -147,18 +181,23 @@ p {
 }
 .gal-item { border: 2px solid #000; overflow: hidden; }
 
-/*CONTROLES*/
+/* ========== CONTROLES ========== */
 
+/* Duas colunas: uma para cada personagem */
 .controls-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
 }
+
+/* Card individual de controles */
 .ctrl-card {
   background: var(--bg);
   border: 2px solid #000;
   padding: 1.5rem;
 }
+
+/* Título do card (ex.: "🧑 Humano") */
 .ctrl-title {
   font-family: 'Press Start 2P', monospace;
   font-size: 12px;
@@ -167,12 +206,16 @@ p {
   padding-bottom: 0.7rem;
   border-bottom: 2px solid #000;
 }
+
+/* Linha de cada ação: tecla + descrição lado a lado */
 .ctrl-row {
   display: flex;
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 0.8rem;
 }
+
+/* Badge de tecla estilo teclado físico */
 .key {
   background: var(--dark);
   color: #fff;
@@ -184,8 +227,11 @@ p {
   min-width: 60px;
   text-align: center;
 }
+
+/* Descrição textual da ação */
 .ctrl-desc { font-size: 15px; color: #333; }
 
+/* Badge das setas direcionais (mesmo visual que .key) */
 .setas {
   background: var(--dark);
   color: #fff;
@@ -198,8 +244,9 @@ p {
   text-align: center;
 }
 
-/*TIME*/
+/* ========== EQUIPE ========== */
 
+/* Grid: coluna de membros + coluna da foto */
 .team-wrap {
   display: grid;
   grid-template-columns: 1fr 360px;
@@ -207,11 +254,13 @@ p {
   align-items: center;
 }
 
+/* Foto da equipe ocupa toda a largura da coluna */
 .team-img img {
   width: 100%;
   display: block;
 }
 
+/* Card de cada membro da equipe */
 .member {
   background: var(--bg);
   border: 2px solid #000;
@@ -222,6 +271,8 @@ p {
   margin-bottom: 0.8rem;
 }
 .member:last-child { margin-bottom: 0; }
+
+/* Ícone/avatar do membro */
 .member-sprite {
   width: 48px;
   height: 48px;
@@ -231,19 +282,28 @@ p {
   align-items: center;
   justify-content: center;
   font-size: 22px;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Não encolhe em telas menores */
 }
+
+/* Nome do membro */
 .member-name { font-size: 15px; color: var(--dark); }
+
+/* Borda ao redor da foto da equipe */
 .team-img { border: 2px solid #000; }
 
-/*LOG*/
+/* ========== LOG DE DESENVOLVIMENTO ========== */
 
+/* Container do log com borda externa */
 .log-box { border: 2px solid #000; }
+
+/* Cada linha do log: data à esquerda + descrição à direita */
 .log-row {
   display: flex;
   border-bottom: 2px solid #e0e0e0;
 }
 .log-row:last-child { border-bottom: none; }
+
+/* Coluna da data — fundo escuro, fonte pixel */
 .log-day {
   background: var(--dark);
   color: #a8c8e8;
@@ -256,6 +316,8 @@ p {
   flex-shrink: 0;
   line-height: 1.8;
 }
+
+/* Coluna da descrição da atividade */
 .log-txt {
   font-size: 15px;
   color: #333;
@@ -265,9 +327,12 @@ p {
   align-items: center;
 }
 
-/*INSTALAR*/
+/* ========== INSTRUÇÕES DE INSTALAÇÃO ========== */
 
+/* Lista vertical de passos */
 .steps { display: flex; flex-direction: column; gap: 0.8rem; }
+
+/* Card de cada passo */
 .step {
   display: flex;
   gap: 1rem;
@@ -276,6 +341,8 @@ p {
   border: 2px solid #000;
   padding: 1rem;
 }
+
+/* Número do passo — quadrado vermelho com fonte pixel */
 .step-n {
   background: var(--accent);
   color: #fff;
@@ -289,12 +356,16 @@ p {
   flex-shrink: 0;
   border: 2px solid #000;
 }
+
+/* Texto descritivo do passo */
 .step-t { font-size: 15px; color: #333; line-height: 2; }
 .step-t a { color: var(--accent); }
+
+/* Estilo dos blocos de código inline (comandos pip/python) */
 code {
   display: inline-block;
   background: var(--dark);
-  color: #a8d8a8;
+  color: #a8d8a8; /* Verde claro sobre fundo escuro — estilo terminal */
   padding: 3px 10px;
   font-family: 'Fira Code', monospace;
   font-size: 14px;
@@ -302,8 +373,9 @@ code {
   margin: 3px 0;
 }
 
-/*VIDEO*/
+/* ========== VÍDEO ========== */
 
+/* Player de vídeo responsivo com altura máxima */
 video {
   width: 100%;
   max-height: 500px;
@@ -311,10 +383,159 @@ video {
   border: 2px solid #000;
 }
 
-/*FOOTER*/
+/* ========== AVALIAÇÃO CRAP ========== */
+
+/*
+  Parágrafo introdutório da seção CRAP — fonte um pouco maior e
+  margem inferior para separar do grid de cards.
+*/
+.crap-intro {
+  font-size: 15px;
+  line-height: 2;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/*
+  Grade dos 4 princípios: 2 colunas em telas largas.
+  Cada card ocupa uma célula da grade.
+*/
+.crap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/*
+  Card individual de cada princípio CRAP.
+  Fundo levemente diferente do branco puro para criar distinção
+  dentro da seção, mantendo a borda preta do padrão do site.
+*/
+.crap-card {
+  background: var(--bg);
+  border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+  Letra grande do princípio (C / R / A / P) — serve como
+  identificador visual imediato. Fundo escuro contrasta com o card.
+*/
+.crap-letra {
+  background: var(--dark);
+  color: var(--accent);           /* Vermelho do projeto no texto */
+  font-family: 'Press Start 2P', monospace;
+  font-size: 28px;
+  text-align: center;
+  padding: 0.8rem;
+  border-bottom: 2px solid #000;
+  letter-spacing: 2px;
+}
+
+/* Área de conteúdo dentro do card */
+.crap-corpo {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Nome do princípio — fonte pixel, tamanho médio */
+.crap-titulo {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  color: var(--dark);
+  margin-bottom: 0.2rem;
+}
+
+/*
+  Bloco de texto para ponto positivo ou negativo.
+  Fundo diferenciado ajuda a separar visualmente os dois tipos.
+*/
+.crap-bloco {
+  padding: 0.8rem;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #333;
+  border: 1px solid #000;
+}
+
+/* Fundo verde suave para pontos positivos */
+.crap-ok  { background: #e8f5e9; }
+
+/* Fundo vermelho suave para pontos negativos / melhorias */
+.crap-err { background: #fff0f0; }
+
+/*
+  Badge que fica no início de cada bloco (✔ Acerto / ✖ Melhoria).
+  Display block para ocupar linha própria antes do texto.
+*/
+.crap-badge {
+  display: inline-block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  padding: 3px 8px;
+  border: 1px solid #000;
+  margin-bottom: 0.4rem;
+}
+
+/* Badge verde para acerto */
+.crap-badge-ok  { background: #2e7d32; color: #fff; }
+
+/* Badge vermelho para melhoria */
+.crap-badge-err { background: var(--accent); color: #fff; }
+
+/*
+  Parágrafo de impacto: explica como o princípio influenciou
+  decisões reais de CSS/HTML no projeto.
+*/
+.crap-impacto {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #444;
+  border-left: 3px solid var(--dark); /* Linha lateral para destaque visual */
+  padding-left: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+/* Código inline dentro do impacto herda o estilo global de <code> */
+.crap-impacto code {
+  font-size: 11px;
+}
+
+/*
+  Caixa de conclusão geral — fundo escuro para criar contraste forte
+  com o restante da seção, funcionando como encerramento visual.
+*/
+.crap-conclusao {
+  background: var(--dark);
+  border: 2px solid #000;
+  padding: 1.5rem;
+  color: #e0e8f0;
+}
+
+/* Título da conclusão em fonte pixel e cor de destaque */
+.crap-conclusao-titulo {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* Parágrafo da conclusão com linha-height generoso para legibilidade */
+.crap-conclusao p {
+  font-size: 14px;
+  line-height: 2;
+  color: #c8d8e8;
+}
+
+/* ========== RODAPÉ ========== */
 
 footer {
-  background: var(--escuro);
+  background: var(--escuro); /* Nota: variável não definida, herda o fundo padrão */
   border-top: 4px solid #0a1520;
   text-align: center;
   padding: 1.2rem;

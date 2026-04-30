@@ -1,3 +1,6 @@
+Index · HTML
+Copiar
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,9 +11,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-
+ 
+<!-- ========== NAVEGAÇÃO ========== -->
 <nav class="nav">
+  <!-- Logo com emoji de pombo -->
   <div class="nav-logo">🕊 CASA DOS POMBOS</div>
+ 
+  <!-- Links de âncora para cada seção da página -->
   <div class="nav-links">
     <a href="#sobre">Sobre</a>
     <a href="#galeria">Galeria</a>
@@ -19,101 +26,347 @@
     <a href="#log">Dev Log</a>
     <a href="#instalar">Instalar</a>
     <a href="#gameplay">Gameplay</a>
+    <!-- Link para a nova seção de avaliação CRAP -->
+    <a href="#crap">CRAP</a>
   </div>
 </nav>
-
+ 
+<!-- ========== HERO (BANNER PRINCIPAL) ========== -->
 <div class="hero">
   <div class="hero-conteudo">
+    <!-- Imagem do título do jogo (renderização pixelada definida no CSS) -->
     <img src="img/titulo.png" alt="Casa dos Pombos" class="hero-img-title">
+ 
+    <!-- Subtítulo narrativo do jogo -->
     <p class="hero-sub">A busca por uma casa o levou longe demais...</p>
+ 
+    <!-- Botão de call-to-action para download -->
     <a href="#" class="btn-cta">▼ BAIXAR JOGO</a>
   </div>
 </div>
-
+ 
+<!-- ========== CONTEÚDO PRINCIPAL ========== -->
 <main class="container">
-
+ 
+  <!-- SEÇÃO: SOBRE O JOGO -->
   <section id="sobre">
-    <h2>🕊 Sobre o jogo</h2>
+    <!--
+      Emoji e texto dentro de <span> separados para que o flexbox
+      do h2 (definido no CSS) alinhe ambos verticalmente ao centro.
+    -->
+    <h2><span>🕊</span><span>Sobre o jogo</span></h2>
     <p>Sem teto e sem esperança, um portal misterioso abriu diante dele.<br><br>Do outro lado? Uma dimensão tomada por adolescentes que odeiam pombos.</p>
   </section>
-
+ 
+  <!-- SEÇÃO: GALERIA DE IMAGENS -->
   <section id="galeria">
-    <h2>🖼 Imagens do jogo</h2>
+    <h2><span>🖼</span><span>Imagens do jogo</span></h2>
+ 
+    <!-- Grade com 3 screenshots do jogo (layout definido em .gallery-grid no CSS) -->
     <div class="gallery-grid">
       <div class="gal-item"><img src="img/telainicial.png" alt="Tela inicial"></div>
       <div class="gal-item"><img src="img/gameplay.png" alt="Gameplay"></div>
       <div class="gal-item"><img src="img/fundodetelafimpombo.png" alt="Tela final"></div>
     </div>
   </section>
-
+ 
+  <!-- SEÇÃO: CONTROLES -->
   <section id="controles">
-    <h2>🎮 Como jogar</h2>
+    <h2><span>🎮</span><span>Como jogar</span></h2>
+ 
+    <!-- Grade com dois cards: um para o humano e outro para o pombo -->
     <div class="controls-grid">
+ 
+      <!-- Card de controles do personagem humano -->
       <div class="ctrl-card">
         <div class="ctrl-title">🧑 Humano</div>
         <div class="ctrl-row"><span class="setas">⬅ ➡</span><span class="ctrl-desc">Mover</span></div>
         <div class="ctrl-row"><span class="key">MOUSE</span><span class="ctrl-desc">Atirar pedras</span></div>
       </div>
+ 
+      <!-- Card de controles do personagem pombo -->
       <div class="ctrl-card">
         <div class="ctrl-title">🕊 Pombo</div>
         <div class="ctrl-row"><span class="key">WASD</span><span class="ctrl-desc">Mover</span></div>
         <div class="ctrl-row"><span class="key">ESPAÇO</span><span class="ctrl-desc">Defecar</span></div>
         <div class="ctrl-row"><span class="key">Q</span><span class="ctrl-desc">Defecar Explosivo</span></div>
       </div>
+ 
     </div>
   </section>
-
+ 
+  <!-- SEÇÃO: EQUIPE -->
   <section id="equipe">
-    <h2>👥 Equipe</h2>
+    <h2><span>👥</span><span>Equipe</span></h2>
+ 
+    <!-- Layout em grid: membros à esquerda, foto da equipe à direita -->
     <div class="team-wrap">
+ 
+      <!-- Lista de membros com ícone e nome -->
       <div>
-        <div class="member"><div class="member-sprite">💻</div><div class="member-name">Victor Barbosa Viana</div></div>
-        <div class="member"><div class="member-sprite">💻</div><div class="member-name">Thiago Zanin Tozzi</div></div>
+        <div class="member">
+          <div class="member-sprite">💻</div>
+          <div class="member-name">Victor Barbosa Viana</div>
+        </div>
+        <div class="member">
+          <div class="member-sprite">💻</div>
+          <div class="member-name">Thiago Zanin Tozzi</div>
+        </div>
       </div>
+ 
+      <!-- Foto real da equipe -->
       <div class="team-img"><img src="img/time.jpeg" alt="Equipe"></div>
+ 
     </div>
   </section>
-
+ 
+  <!-- SEÇÃO: LOG DE DESENVOLVIMENTO -->
   <section id="log">
-    <h2>📋Log de Desenvolvimento</h2>
+    <h2><span>📋</span><span>Log de Desenvolvimento</span></h2>
+ 
+    <!-- Tabela de progresso diário do projeto -->
     <div class="log-box">
-      <div class="log-row"><span class="log-day">Dia 1 · 18/04</span><span class="log-txt">Inserção de imagens iniciais</span></div>
-      <div class="log-row"><span class="log-day">Dia 2 · 19/04</span><span class="log-txt">Imagens com fundo transparente</span></div>
-      <div class="log-row"><span class="log-day">Dia 3 · 21/04</span><span class="log-txt">Base do jogo — movimentação do humano, mecânicas do pombo e fundo de tela</span></div>
-      <div class="log-row"><span class="log-day">Dia 4 · 22/04</span><span class="log-txt">HUD e mecânicas — barra de vida, cronômetro, colisões, sons, mira e telas finais</span></div>
-      <div class="log-row"><span class="log-day">Dia 5 · 23/04</span><span class="log-txt">NPC nas fases difícil e média, balanceamento e ajustes de tela</span></div>
-      <div class="log-row"><span class="log-day">Dia 6 · 25/04</span><span class="log-txt">Menu principal, intro de vídeo, coco explosivo e navegação entre telas</span></div>
-      <div class="log-row"><span class="log-day">Dia 7 · 27/04</span><span class="log-txt">Ajustes de resolução de tela e dimensões dos botões do menu</span></div>
+      <div class="log-row">
+        <span class="log-day">Dia 1 · 18/04</span>
+        <span class="log-txt">Inserção de imagens iniciais</span>
+      </div>
+      <div class="log-row">
+        <span class="log-day">Dia 2 · 19/04</span>
+        <span class="log-txt">Imagens com fundo transparente</span>
+      </div>
+      <div class="log-row">
+        <span class="log-day">Dia 3 · 21/04</span>
+        <span class="log-txt">Base do jogo — movimentação do humano, mecânicas do pombo e fundo de tela</span>
+      </div>
+      <div class="log-row">
+        <span class="log-day">Dia 4 · 22/04</span>
+        <span class="log-txt">HUD e mecânicas — barra de vida, cronômetro, colisões, sons, mira e telas finais</span>
+      </div>
+      <div class="log-row">
+        <span class="log-day">Dia 5 · 23/04</span>
+        <span class="log-txt">NPC nas fases difícil e média, balanceamento e ajustes de tela</span>
+      </div>
+      <div class="log-row">
+        <span class="log-day">Dia 6 · 25/04</span>
+        <span class="log-txt">Menu principal, intro de vídeo, coco explosivo e navegação entre telas</span>
+      </div>
+      <div class="log-row">
+        <span class="log-day">Dia 7 · 27/04</span>
+        <span class="log-txt">Ajustes de resolução de tela e dimensões dos botões do menu</span>
+      </div>
     </div>
   </section>
-
+ 
+  <!-- SEÇÃO: INSTRUÇÕES DE INSTALAÇÃO -->
   <section id="instalar">
-    <h2>⚙️ Instruções para executar</h2>
+    <h2><span>⚙️</span><span>Instruções para executar</span></h2>
+ 
+    <!-- Passo a passo numerado para rodar o jogo localmente -->
     <div class="steps">
-      <div class="step"><div class="step-n">1</div><div class="step-t">Baixe o arquivo zip e extraia</div></div>
-      <div class="step"><div class="step-n">2</div><div class="step-t">Tenha Python instalado → <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads</a></div></div>
-      <div class="step"><div class="step-n">3</div><div class="step-t">
-        Instale as dependências:<br>
-        <code>pip install pygame</code><br>
-        <code>pip install opencv-python</code><br>
-        <code>pip install moviepy</code>
-      </div></div>
-      <div class="step"><div class="step-n">4</div><div class="step-t">Execute: <code>python menu.py</code></div></div>
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-t">Baixe o arquivo zip e extraia</div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-t">Tenha Python instalado → <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads</a></div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-t">
+          Instale as dependências:<br>
+          <code>pip install pygame</code><br>
+          <code>pip install opencv-python</code><br>
+          <code>pip install moviepy</code>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div class="step-t">Execute: <code>python menu.py</code></div>
+      </div>
     </div>
   </section>
-
+ 
+  <!-- SEÇÃO: VÍDEO DE GAMEPLAY -->
   <section id="gameplay">
-    <h2>▶ Gameplay</h2>
+    <h2><span>▶</span><span>Gameplay</span></h2>
+ 
+    <!-- Player de vídeo nativo do HTML5 com controles visíveis -->
     <video controls>
       <source src="video/videotemp.mp4" type="video/mp4">
     </video>
   </section>
-
+ 
+ 
+  <!-- ========== SEÇÃO: AVALIAÇÃO DOS PRINCÍPIOS CRAP ========== -->
+  <!--
+    Esta seção apresenta a análise CRAP (Contraste, Repetição, Alinhamento, Proximidade)
+    feita por três avaliadores externos (Pedro Wu, João Henrique e Vicente) após a
+    publicação do site. Os feedbacks foram fundamentais para entender os acertos
+    e pontos de melhoria do design.
+  -->
+  <section id="crap">
+    <h2><span>📐</span><span>Avaliação dos Princípios CRAP</span></h2>
+ 
+    <!-- Parágrafo introdutório explicando a importância da avaliação -->
+    <p class="crap-intro">
+      Após a publicação do site, três avaliadores analisaram o design com base nos
+      princípios CRAP — Contraste, Repetição, Alinhamento e Proximidade. Essa etapa
+      foi essencial para identificar o que funcionou bem e o que pode evoluir,
+      conectando teoria de design à prática do projeto.
+    </p>
+ 
+    <!-- Grade com os 4 princípios CRAP, cada um em um card próprio -->
+    <div class="crap-grid">
+ 
+      <!-- CARD: CONTRASTE -->
+      <div class="crap-card">
+        <!-- Letra identificadora do princípio, com cor de destaque -->
+        <div class="crap-letra">C</div>
+        <div class="crap-corpo">
+          <div class="crap-titulo">Contraste</div>
+ 
+          <!-- Ponto positivo identificado nas avaliações -->
+          <div class="crap-bloco crap-ok">
+            <span class="crap-badge crap-badge-ok">✔ Acerto</span>
+            O botão "Baixar Jogo" em vermelho sobre o fundo escuro da hero
+            cria hierarquia visual clara — o elemento mais importante da página
+            chama atenção imediatamente.
+          </div>
+ 
+          <!-- Ponto negativo identificado nas avaliações -->
+          <div class="crap-bloco crap-err">
+            <span class="crap-badge crap-badge-err">✖ Melhoria</span>
+            O fundo azul claro do site e o fundo branco das seções têm tonalidades
+            muito parecidas, reduzindo a separação visual entre o layout e o conteúdo.
+            Os títulos também carecem de variação tipográfica em relação ao corpo.
+          </div>
+ 
+          <!-- Como esse princípio guiou decisões reais no projeto -->
+          <p class="crap-impacto">
+            💡 <strong>Impacto no projeto:</strong> a escolha do vermelho
+            <code>--accent: #ff4d4d</code> e do azul escuro <code>--dark: #1f2a38</code>
+            como variáveis centrais foi validada pelo contraste positivo na hero.
+            A avaliação apontou a necessidade de ampliar esse contraste nas demais seções.
+          </p>
+        </div>
+      </div>
+ 
+      <!-- CARD: REPETIÇÃO -->
+      <div class="crap-card">
+        <div class="crap-letra">R</div>
+        <div class="crap-corpo">
+          <div class="crap-titulo">Repetição</div>
+ 
+          <div class="crap-bloco crap-ok">
+            <span class="crap-badge crap-badge-ok">✔ Acerto</span>
+            A reutilização da fonte pixel, das bordas pretas retangulares e do
+            alinhamento centralizado de títulos em todas as seções cria uma identidade
+            visual coerente com a temática retrô do jogo.
+          </div>
+ 
+          <div class="crap-bloco crap-err">
+            <span class="crap-badge crap-badge-err">✖ Melhoria</span>
+            A repetição excessiva tornou as seções monótonas: todos os cards
+            possuem exatamente o mesmo estilo, perdendo a oportunidade de diferenciar
+            visualmente conteúdos de naturezas distintas (narrativo vs. técnico).
+          </div>
+ 
+          <p class="crap-impacto">
+            💡 <strong>Impacto no projeto:</strong> o padrão de blocos com
+            <code>border: 2px solid black</code> e fundo branco foi uma decisão
+            consciente de consistência. A avaliação mostrou que pequenas variações
+            (ex.: fundo diferente para seções técnicas) enriqueceriam sem quebrar
+            a identidade.
+          </p>
+        </div>
+      </div>
+ 
+      <!-- CARD: ALINHAMENTO -->
+      <div class="crap-card">
+        <div class="crap-letra">A</div>
+        <div class="crap-corpo">
+          <div class="crap-titulo">Alinhamento</div>
+ 
+          <div class="crap-bloco crap-ok">
+            <span class="crap-badge crap-badge-ok">✔ Acerto</span>
+            O Log de Desenvolvimento apresenta alinhamento consistente na lista vertical,
+            facilitando a leitura sequencial. Todos os blocos compartilham o mesmo eixo
+            central, criando uma espinha dorsal clara na página.
+          </div>
+ 
+          <div class="crap-bloco crap-err">
+            <span class="crap-badge crap-badge-err">✖ Melhoria</span>
+            Na seção Equipe, os nomes dos integrantes ficaram alinhados à esquerda
+            enquanto as imagens não seguiam um alinhamento definido, criando dois
+            blocos de leitura que comprometem a fluidez visual.
+          </div>
+ 
+          <p class="crap-impacto">
+            💡 <strong>Impacto no projeto:</strong> o uso de <code>display: grid</code>
+            e <code>align-items: center</code> no <code>.team-wrap</code> foi uma tentativa
+            de resolver o alinhamento da equipe. A avaliação confirmou que o grid funciona,
+            mas a relação entre nomes e fotos ainda precisa ser mais explícita.
+          </p>
+        </div>
+      </div>
+ 
+      <!-- CARD: PROXIMIDADE -->
+      <div class="crap-card">
+        <div class="crap-letra">P</div>
+        <div class="crap-corpo">
+          <div class="crap-titulo">Proximidade</div>
+ 
+          <div class="crap-bloco crap-ok">
+            <span class="crap-badge crap-badge-ok">✔ Acerto</span>
+            O hero agrupa título, subtítulo e botão de download em um único bloco coeso.
+            A galeria de imagens também posiciona as três capturas lado a lado, deixando
+            claro que formam um conjunto.
+          </div>
+ 
+          <div class="crap-bloco crap-err">
+            <span class="crap-badge crap-badge-err">✖ Melhoria</span>
+            Na seção Equipe, os nomes ficaram distantes das respectivas imagens,
+            dificultando a associação entre pessoa e foto. Além disso, todas as seções
+            possuem o mesmo espaçamento entre si, sem agrupar conteúdos relacionados.
+          </div>
+ 
+          <p class="crap-impacto">
+            💡 <strong>Impacto no projeto:</strong> o <code>gap: 2.5rem</code> uniforme
+            no <code>.container</code> garantiu consistência, mas a avaliação mostrou que
+            agrupar seções afins ("Como jogar" + "Instruções") com espaçamentos menores
+            criaria blocos temáticos mais legíveis.
+          </p>
+        </div>
+      </div>
+ 
+    </div><!-- fim .crap-grid -->
+ 
+    <!-- Conclusão geral sintetizando as três avaliações -->
+    <div class="crap-conclusao">
+      <div class="crap-conclusao-titulo">📝 Conclusão geral</div>
+      <p>
+        As três avaliações convergiram para o mesmo diagnóstico: o site tem uma
+        identidade visual sólida e coerente com a proposta retrô do jogo,
+        acertando especialmente no hero e na consistência dos blocos. Os pontos
+        de melhoria concentram-se na hierarquia visual interna das seções —
+        mais contraste entre títulos e corpo, variações de card para conteúdos
+        distintos e espaçamentos que agrupem seções relacionadas. A avaliação
+        CRAP transformou percepções subjetivas em orientações concretas de design,
+        mostrando que pequenos ajustes de CSS podem elevar significativamente a
+        legibilidade sem comprometer a estética pixel do projeto.
+      </p>
+    </div>
+ 
+  </section><!-- fim #crap -->
+ 
 </main>
-
+ 
+<!-- ========== RODAPÉ ========== -->
 <footer>
   <p>© Projeto Casa dos Pombos de Victor Barbosa Viana e Thiago Zanin Tozzi</p>
 </footer>
-
+ 
 </body>
 </html>
+ 
